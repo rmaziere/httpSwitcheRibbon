@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <style>#activessl a{background:#f00;color:#ff0;text-decoration:none;font-family:arial,sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:1rem;line-height:2rem;position:relative;transition:0.5s;}#activessl a:hover{background:#c11;color:#fff;}#activessl a::before,#activessl a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#fff;}#activessl a::after{bottom:1px;top:auto;}@media screen and (min-width:800px){#activessl{position:fixed;display:block;top:0;left:0;width:200px;overflow:hidden;height:200px;z-index:9999;}#activessl a{width:200px;position:absolute;top:60px;left:-60px;transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-o-transform:rotate(-45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.8);}}</style>
+    <span id="activessl"><a>Passer en https</a></span>
+    <script type="text/javascript">
+      var url = document.URL;
+      if(url.match("(http:\/\/)")){
+        url = url.replace("http", "https");
+        document.querySelector("#activessl a").setAttribute("href", url);
+        }
+    </script>
+  </body>
+</html>
